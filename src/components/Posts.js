@@ -7,7 +7,7 @@ const Posts = ({ posts, loading }) => {
   const renderPosts = () =>
     posts.map((post, index) => (
       <li key={index}>
-        <h1>Post</h1>
+        <h1>{post.title}</h1>
       </li>
     ));
   return <ul>{renderPosts()}</ul>;
