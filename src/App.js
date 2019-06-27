@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
-import Post from './components/Post';
+import Posts from './components/Posts';
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <h1>React Pagination</h1>
       <ul className="list-group mb-4">
-        <Post />
+        <Posts posts={posts} />
       </ul>
     </div>
   );
