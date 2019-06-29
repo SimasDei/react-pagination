@@ -6,11 +6,11 @@ const Posts = ({ posts, loading }) => {
   }
   const renderPosts = () =>
     posts.map((post, index) => (
-      <li key={index}>
+      <li className="list-group-item" key={index}>
         <h1>{post.title}</h1>
       </li>
     ));
-  return <ul>{renderPosts()}</ul>;
+  return <ul className="list-group mb-4">{renderPosts()}</ul>;
 };
 
 export default Posts;

@@ -19,13 +19,15 @@ function App() {
     fetchPosts();
   }, []);
 
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
   console.log(posts);
   return (
-    <div className="App">
-      <h1>React Pagination</h1>
-      <ul className="list-group mb-4">
-        <Posts posts={posts} />
-      </ul>
+    <div className="App container">
+      <h1 className="text-primary mb-3">React Pagination</h1>
+      <Posts posts={currentPosts} loading={loading} />
     </div>
   );
 }
